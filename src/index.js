@@ -1,6 +1,9 @@
 const express = require("express");
 const { api } = require("./config");
+const apiV1Routes = require("./api/v1/routes");
 const router = express.Router();
+
+router.use(api.v1, apiV1Routes);
 
 router.use(api.v1, (_, res) => {
   res.status(200).json({

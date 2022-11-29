@@ -1,7 +1,7 @@
 const generateJwtUtil = require("./generateJwt.util");
 const passwordHashUtil = require("./passwordHash.util");
 const generateIdUtil = require("./generateId.util");
-const connectionErrorUtil = rquire("./connectionError.util");
+const connectionErrorUtil = require("./connectionError.util");
 const responseUtil = require("./response.util");
 
 module.exports = {
