@@ -23,7 +23,7 @@ router.post(
 router.get(
   "/",
   authMiddleware.isAuth,
-  userMiddleware.adminPermission,
+  authMiddleware.adminPermission,
   userMiddleware.countUser,
   userController.getUserList
 );

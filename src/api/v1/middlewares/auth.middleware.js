@@ -32,6 +32,17 @@ const isAuth = (req, res, next) => {
   }
 };
 
+const adminPermission = (req, res, next) => {
+  const role = res.locals.tokenPayload.role;
+
+  if (role === "Admin") {
+    next();
+  } else {
+    resError("Limited access", 403, null, res);
+  }
+};
+
 module.exports = {
   isAuth,
+  adminPermission,
 };
