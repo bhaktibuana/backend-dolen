@@ -58,20 +58,9 @@ const checkEmailLoginExist = (req, res, next) => {
     .catch((error) => connectionError(error, res));
 };
 
-const adminPermission = (req, res, next) => {
-  const role = res.locals.tokenPayload.role;
-
-  if (role === "Admin") {
-    next();
-  } else {
-    resError("Limited access", 403, null, res);
-  }
-};
-
 module.exports = {
   checkEmailExist,
   getRoleId,
   countUser,
   checkEmailLoginExist,
-  adminPermission,
 };
